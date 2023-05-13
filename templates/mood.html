@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Moodio</title>
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/FONTSPRING%20DEMO%20-%20Proxima%20Nova.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Gothic+A1&amp;display=swap">
+    <link rel="stylesheet" href="assets/css/Navbar-Centered-Brand-Dark-icons.css">
+    <link rel="stylesheet" href="assets/css/Parallax-Scroll-Effect.css">
+    <link rel="stylesheet" href="assets/css/Simple-Slider-swiper-bundle.min.css">
+    <link rel="stylesheet" href="assets/css/Simple-Slider.css">
+</head>
+
+<body style="background: url(&quot;https://media.istockphoto.com/id/476098860/vector/wonderful-morning-in-the-blue-mountains.jpg?s=612x612&amp;w=0&amp;k=20&amp;c=0nuLvsWKXPReu01RvbXTKIwlUYxOQvoXD_qVBrsapxc=&quot;), rgb(54,54,54);background-size: cover, auto;">
+    <nav class="navbar navbar-dark navbar-expand-md bg-dark py-3">
+        <div class="container"><a class="navbar-brand d-flex align-items-center" href="#"><span class="bs-icon-sm bs-icon-rounded bs-icon-primary d-flex justify-content-center align-items-center me-2 bs-icon" style="background: rgb(255,255,255);"><img src="assets/img/Screenshot_2023-05-13_at_12.35.02_PM-removebg-preview.png" style="width: 42px;" width="42" height="26"></span><span>Moodio</span></a><button data-bs-toggle="collapse" class="navbar-toggler" data-bs-target="#navcol-6"><span class="visually-hidden">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
+            <div class="collapse navbar-collapse flex-grow-0 order-md-first" id="navcol-6">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item"><a class="nav-link active" href="{{ url_for('mood') }}">Mood</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="{{ url_for('playlist') }}">Playlist</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{{ url_for('info') }}">Info</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="container flex-column" style="height: 100vh;display: flex;justify-content: center;align-items: center;background: rgba(54,54,54,0.75);border-radius: 45;border-top-left-radius: 6;border-top-right-radius: 6;border-bottom-right-radius: 6;border-bottom-left-radius: 6;border-radius: 20px;width: 100vw;">
+        <h1 style="padding-left: 0;margin-left: auto;margin-right: auto;display: block;">Mood Select</h1>
+        <p style="margin-top: 30px;"><span style="color: rgb(255, 255, 255);">1. Rate your mood :</span></p>
+        <form method="POST" action="mood">
+            <p><span style="color: rgb(255, 255, 255);">Energy :</span><input class="form-range" type="range" name="energy" min="0" max="1" step="0.01"></p>
+            <p style="margin-top: 30px;"><span style="color: rgb(255, 255, 255);">2. Generate playlists :</span></p><button class="btn btn-primary justify-content-center align-items-center align-content-center align-self-center" type="submit" style="margin-left: auto;margin-right: auto;display: flex;width: 210px;height: 75px;text-align: center;font-size: 25px;color: var(--bs-btn-disabled-color);background: rgb(30,215,96);border-radius: 41px;font-family: 'Gothic A1', sans-serif;font-weight: bold;margin-top: 10px;">Generate</button>
+        </form>
+    </div>
+    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+    <script src="assets/js/Simple-Slider-swiper-bundle.min.js"></script>
+    <script src="assets/js/Simple-Slider.js"></script>
+</body>
+
+</html>

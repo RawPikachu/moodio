@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Moodio</title>
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/FONTSPRING%20DEMO%20-%20Proxima%20Nova.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Gothic+A1&amp;display=swap">
+    <link rel="stylesheet" href="assets/css/Navbar-Centered-Brand-Dark-icons.css">
+    <link rel="stylesheet" href="assets/css/Parallax-Scroll-Effect.css">
+    <link rel="stylesheet" href="assets/css/Simple-Slider-swiper-bundle.min.css">
+    <link rel="stylesheet" href="assets/css/Simple-Slider.css">
+</head>
+
+<body style="background: url(&quot;https://media.istockphoto.com/id/476098860/vector/wonderful-morning-in-the-blue-mountains.jpg?s=612x612&amp;w=0&amp;k=20&amp;c=0nuLvsWKXPReu01RvbXTKIwlUYxOQvoXD_qVBrsapxc=&quot;), rgb(54,54,54);background-size: cover, auto;">
+    <nav class="navbar navbar-dark navbar-expand-md bg-dark py-3">
+        <div class="container"><a class="navbar-brand d-flex align-items-center" href="#"><span class="bs-icon-sm bs-icon-rounded bs-icon-primary d-flex justify-content-center align-items-center me-2 bs-icon" style="background: rgb(255,255,255);"><img src="assets/img/Screenshot_2023-05-13_at_12.35.02_PM-removebg-preview.png" style="width: 42px;" width="42" height="26"></span><span>Moodio</span></a><button data-bs-toggle="collapse" class="navbar-toggler" data-bs-target="#navcol-6"><span class="visually-hidden">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
+            <div class="collapse navbar-collapse flex-grow-0 order-md-first" id="navcol-6">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item"><a class="nav-link active" href="{{ url_for('mood') }}">Mood</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="{{ url_for('playlist') }}">Playlist</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{{ url_for('info') }}">Info</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="container flex-column" style="height: 100vh;display: flex;justify-content: center;align-items: center;background: rgba(54,54,54,0.75);border-radius: 45;border-top-left-radius: 6;border-top-right-radius: 6;border-bottom-right-radius: 6;border-bottom-left-radius: 6;border-radius: 20px;width: 100vw;">
+        <h1 style="display: flex;width: 360px;justify-content: center;align-items: center;padding-top: 90px;font-size: 60px;">Our Story</h1>
+        <p class="text-center flex-column" style="display: flex;text-align: left;font-family: 'FONTSPRING DEMO - Proxima Nova';justify-content: center;align-items: center;padding-top: 30px;font-size: 21px;"><span style="color: rgb(255, 255, 255);">&nbsp; &nbsp; &nbsp;At Moodio, we are passionate about revolutionizing the way people listen to music. Our idea for the company was born out of frustration with the lack of good music choices that integrated with our moods. As a team, we recognized the importance of music in our lives and how it can be a powerful tool to help us cope with our emotions. We set out to create a platform that would make it easy for people to find music that fits their current emotional state.</span><br><span style="color: rgb(255, 255, 255);">Our approach to music selection is unique and personalized. By integrating mood into our algorithm, we provide users with a customized playlist that perfectly fits their emotional state. Our team is comprised of Leo, who brings his design and marketing skills, Yiming and Kit, who are both developers. Together, we have created a platform that is intuitive, easy to use, and highly effective. At Moodio, we are passionate about helping people better cope with their emotions through music. With our drive, creativity, and hard work, we are confident in our ability to revolutionize the way people listen to music and make a positive impact in their lives.</span></p>
+    </div>
+    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+    <script src="assets/js/Simple-Slider-swiper-bundle.min.js"></script>
+    <script src="assets/js/Simple-Slider.js"></script>
+</body>
+
+</html>
