@@ -79,36 +79,39 @@ def playlist():
             req = requests.get("https://api.spotify.com/v1/audio-features?ids=" + ",".join(chunk), headers={"Authorization": "Bearer " + session["access_token"]})
             if req.status_code == 200:
                 for track in req.json()["audio_features"]:
-                    if mood < 0.1:
-                        if (track["valence"] >= 0 and track["valence"] <= mood + 0.15 and
-                            track["energy"] <= mood * 10 and
-                            track["danceability"] <= mood * 8):
-                            playlist.append(track["uri"])
-                    elif mood >= 0.1 and mood < 0.25:
-                        if (track["valence"] >= mood - 0.075 and track["valence"] <= mood + 0.075 and
-                            track["energy"] <= mood * 5 and
-                            track["danceability"] <= mood * 4):
-                            playlist.append(track["uri"])
-                    elif mood >= 0.25 and mood < 0.5:
-                        if (track["valence"] >= mood - 0.05 and track["valence"] <= mood + 0.05 and
-                            track["energy"] <= mood * 1.75 and
-                            track["danceability"] <= mood * 1.75):
-                            playlist.append(track["uri"])
-                    elif mood >= 0.5 and mood < 0.75:
-                        if (track["valence"] >= mood - 0.075 and track["valence"] <= mood + 0.075 and
-                            track["energy"] <= mood / 2 and
-                            track["danceability"] <= mood / 2.5):
-                            playlist.append(track["uri"])
-                    elif mood >= 0.75 and mood < 0.9:
-                        if (track["valence"] >= mood - 0.075 and track["valence"] <= mood + 0.075 and
-                            track["energy"] <= mood / 1.75 and
-                            track["danceability"] <= mood / 2):
-                            playlist.append(track["uri"])
-                    elif mood >= 0.9:
-                        if (track["valence"] >= mood - 0.15 and track["valence"] <= 1 and
-                            track["energy"] <= mood / 1.5 and
-                            track["danceability"] <= mood / 1.75):
-                            playlist.append(track["uri"])
+                    try:
+                        if mood < 0.1:
+                            if (track["valence"] >= 0 and track["valence"] <= mood + 0.15 and
+                                track["energy"] <= mood * 10 and
+                                track["danceability"] <= mood * 8):
+                                playlist.append(track["uri"])
+                        elif mood >= 0.1 and mood < 0.25:
+                            if (track["valence"] >= mood - 0.075 and track["valence"] <= mood + 0.075 and
+                                track["energy"] <= mood * 5 and
+                                track["danceability"] <= mood * 4):
+                                playlist.append(track["uri"])
+                        elif mood >= 0.25 and mood < 0.5:
+                            if (track["valence"] >= mood - 0.05 and track["valence"] <= mood + 0.05 and
+                                track["energy"] <= mood * 1.75 and
+                                track["danceability"] <= mood * 1.75):
+                                playlist.append(track["uri"])
+                        elif mood >= 0.5 and mood < 0.75:
+                            if (track["valence"] >= mood - 0.075 and track["valence"] <= mood + 0.075 and
+                                track["energy"] <= mood / 2 and
+                                track["danceability"] <= mood / 2.5):
+                                playlist.append(track["uri"])
+                        elif mood >= 0.75 and mood < 0.9:
+                            if (track["valence"] >= mood - 0.075 and track["valence"] <= mood + 0.075 and
+                                track["energy"] <= mood / 1.75 and
+                                track["danceability"] <= mood / 2):
+                                playlist.append(track["uri"])
+                        elif mood >= 0.9:
+                            if (track["valence"] >= mood - 0.15 and track["valence"] <= 1 and
+                                track["energy"] <= mood / 1.5 and
+                                track["danceability"] <= mood / 1.75):
+                                playlist.append(track["uri"])
+                    except TypeError:
+                        continue
             else:
                 return "Audio Features Error: " + str(req.status_code)
             
